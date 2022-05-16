@@ -121,3 +121,12 @@ dlib的facial_landmarks 检测：
 - 42-47右眼
 - 48-60 嘴唇
 - 61-67 嘴巴中间
+
+
+
+大眼算法
+
+论文：Interactive Image Warping（1993年Andreas Gustafsson）
+
+
+

@@ -39,7 +39,7 @@ while True:
     else:
 
         # faceCascade= cv2.CascadeClassifier("Resources/haarcascade_frontalface_default.xml")
-        img = cv2.imread('3.jpg')
+        img = cv2.imread('1.jpeg')
     # img = cv2.resize(img, (0,0), None, 0.5, 0.5)
     img_original = img.copy()
     detector = dlib.get_frontal_face_detector()
@@ -90,8 +90,11 @@ while True:
         colored_eye_img = cv2.GaussianBlur(colored_eye_img, (7, 7), 10)
         colored_eye_img = cv2.addWeighted(img, 1, colored_eye_img, 0.4, 0)
         # cv2.imshow("BGR", colored_eye_img)
-        combo_img = utils.stackImages(0.3, ([colored_eye_img,img_original]))
-        cv2.imshow("comb",combo_img)
+
+
+        # combo_img = utils.stackImages(1, ([colored_eye_img,img_original]))
+        # cv2.imshow("comb",combo_img)
+        cv2.imshow("img", img_original)
 
     # cv2.imshow("img org", img_original)
     if cv2.waitKey(1) & 0xFF == ord('q'):
