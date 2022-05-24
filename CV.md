@@ -227,7 +227,13 @@ dlib的facial_landmarks 检测：
 
 针对以上情况，我后来又做了一些尝试但是都不太理想，自己的想法很简陋，无法应对模特姿势的改变和衣服图案的复杂性。
 
+![tmpCAFB](CV.assets/tmpCAFB.png)
 
+
+
+
+
+![tmpA8C2](CV.assets/tmpA8C2.png)
 
 
 
