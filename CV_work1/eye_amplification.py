@@ -90,7 +90,7 @@ while True:
     else:
 
         # faceCascade= cv2.CascadeClassifier("Resources/haarcascade_frontalface_default.xml")
-        img = cv2.imread('1.jpeg')
+        img = cv2.imread('img_repo/01.jpg')
         img_ori = img.copy()
     # img = cv2.resize(img, (0,0), None, 0.5, 0.5)
     detector = dlib.get_frontal_face_detector()
