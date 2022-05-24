@@ -7,7 +7,7 @@ import os
 cap = cv2.VideoCapture(0)
 seg = SelfiSegmentation()
 fps_reader = cvzone.FPS()
-bk_img = cv2.imread("img_repo/01_background2.jpg")
+bk_img = cv2.imread("img_repo/backgrounds/01_background2.jpg")
 dir_list = os.listdir("img_repo")
 bk_img_list = []
 

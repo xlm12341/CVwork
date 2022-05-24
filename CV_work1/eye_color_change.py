@@ -9,11 +9,7 @@ cap = cv2.VideoCapture(0)
 
 def empty(a):
     pass
-cv2.namedWindow("BGR")
-cv2.resizeWindow("BGR", 640, 240)
-cv2.createTrackbar("Blue", 'BGR', 0, 255, empty)
-cv2.createTrackbar("Green", 'BGR', 0, 255, empty)
-cv2.createTrackbar("Red", 'BGR', 0, 255, empty)
+
 
 def create_box(img, points, scale=5, masked=False, cropped=True):
     mask = None
@@ -31,15 +27,13 @@ def create_box(img, points, scale=5, masked=False, cropped=True):
         return img_crop
     return mask
 
-
-while True:
-
+for i in range(5):
     if webcam:
         success, img = cap.read()
     else:
 
         # faceCascade= cv2.CascadeClassifier("Resources/haarcascade_frontalface_default.xml")
-        img = cv2.imread('img_repo/01.jpg')
+        img = cv2.imread(f'img_repo/0{i+1}.jpg')
     # img = cv2.resize(img, (0,0), None, 0.5, 0.5)
     img_original = img.copy()
     detector = dlib.get_frontal_face_detector()
@@ -72,12 +66,9 @@ while True:
         img_right_eye = create_box(img, facial_points[42:48], masked=True,cropped=False)
 
         colored_eye_img = np.zeros_like(img_left_eye)
-        b = cv2.getTrackbarPos('Blue', 'BGR')
-        g = cv2.getTrackbarPos('Green', 'BGR')
-        r = cv2.getTrackbarPos('Red', 'BGR')
+
         # colored_eye_img[:] = 153, 0, 157
-        colored_eye_img[:] = b, g, r
-        print(b,g,r)
+        colored_eye_img[:] = 90,0,0
 
         # 双眼mask
         eyes_img = cv2.bitwise_or(img_right_eye, img_left_eye)
@@ -86,20 +77,18 @@ while True:
         else:
             eyes_detected_mask = cv2.bitwise_or(eyes_img, eyes_detected_mask)
         colored_eye_img = cv2.bitwise_and(colored_eye_img, eyes_detected_mask)
-
         colored_eye_img = cv2.GaussianBlur(colored_eye_img, (7, 7), 10)
         colored_eye_img = cv2.addWeighted(img, 1, colored_eye_img, 0.4, 0)
-        # cv2.imshow("BGR", colored_eye_img)
+        cv2.imshow("BGR", colored_eye_img)
 
 
         # combo_img = utils.stackImages(1, ([colored_eye_img,img_original]))
         # cv2.imshow("comb",combo_img)
-        cv2.imshow("colored", colored_eye_img)
         cv2.imshow("img", img_original)
 
     # cv2.imshow("img org", img_original)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    cv2.imwrite(f"img_repo/0{i+1}p.jpg",colored_eye_img)
+cv2.waitKey(1)
 
 # imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 #
