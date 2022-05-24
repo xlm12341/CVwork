@@ -49,7 +49,7 @@ class FaceDetection():
         cv2.line(img, (x1,y1), (x1,y1-l), (255,0,255), t)
         return img
 def main():
-    cap = cv2.VideoCapture("video_repo/woman.mp4")
+    cap = cv2.VideoCapture("video_repo/2women.mp4")
     previous_time = 0
     detector = FaceDetection()
     while True:
