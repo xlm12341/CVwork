@@ -298,3 +298,19 @@ dlib的facial_landmarks 检测：
 
 cpviton 还可以试一下效果
 
+
+
+
+
+
+
+
+
+
+
+## work3
+
+https://github.com/USC-InfoLab/rddc2020#IMSC-YOLOv5-Model-zoo
+
+road damage detection
+
