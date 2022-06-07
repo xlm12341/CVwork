@@ -3,8 +3,8 @@ import dlib
 import face_recognition
 import utils
 import os
-img_elon = face_recognition.load_image_file('img_repo/musk.jpg')
-img_elon_test = face_recognition.load_image_file('img_repo/musk2.jpg')
+img_elon = face_recognition.load_image_file('face_img_repo/musk.jpg')
+img_elon_test = face_recognition.load_image_file('face_img_repo/musk2.jpg')
 
 img_elon = cv2.cvtColor(img_elon, cv2.COLOR_BGR2RGB)
 img_elon_test = cv2.cvtColor(img_elon_test, cv2.COLOR_BGR2RGB)
